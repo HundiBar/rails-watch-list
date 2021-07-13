@@ -23,5 +23,10 @@
               data: { confirm: "Are you sure?" }, class: "m-2 remove" %>
     </div>
   <% end %>
+  <% if @list.photo.attached? %>
+    <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <p style="color:white;">no photo</p>
+  <% end %>
 
 </div>
