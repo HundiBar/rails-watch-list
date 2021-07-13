@@ -1,0 +1,20 @@
+<nav class="d-flex navbar navbar-expand-lg fixed-top">
+  <%= link_to lists_path, class: "navbar-brand m-2 home-link" do %>
+  <div class="d-flex justify-content-center align-items-center">
+    <i class="fas fa-video"></i>
+    <span class="ml-2">Watch List</span>
+  </div>
+  <% end %>
+  <div class="d-flex">
+    <div>
+      <%= form_tag movies_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          placeholder: "Find a movie"%>
+        <%= submit_tag "Search", class: "btn btn-outline-success m-2 p-2 px-5" %>
+      <% end %>
+    </div>
+    <%= link_to "New List", new_list_path, class: "btn-red"%>
+  </div>
+</nav>
+

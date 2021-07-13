@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col">
+    <div class="my-5">
+      <% if @query %>
+        <p style="color:white;">You searched for <strong><%= @query %></strong>. We found <%= @movies.count %> movies out of our <%= Movie.count %> on our website.</p>
+      <% else %>
+        <p>All <%= Movie.count %> movies</p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+  <% @movies.each do |movie| %>
+    <h1 style="color:white;"> <%= movie.title %> </h1>
+    <%= image_tag movie.poster_url, alt: "alttext" %>
+  <% end %>
+
+

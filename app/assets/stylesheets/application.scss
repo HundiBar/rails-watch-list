@@ -11,3 +11,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import 'select2/dist/css/select2';
+@import 'owl.carousel/dist/assets/owl.carousel.css';
+
+#yield-margin {
+  margin-top: 78px;
+}
+
+body {
+  background-color: #140405;
+}

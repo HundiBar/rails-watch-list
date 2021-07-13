@@ -12,6 +12,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div>
+      <%= render "shared/navbar" %>
+    </div>
+    <div id="yield-margin">
+      <%= yield %>
+    </div>
   </body>
 </html>

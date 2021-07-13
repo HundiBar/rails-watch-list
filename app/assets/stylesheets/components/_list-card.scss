@@ -1,0 +1,29 @@
+.list-card {
+  background-size: cover;
+  background-position: center;
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(255, 255, 255,1);
+  border:solid 10px #CF0021;
+  text-decoration: none;
+  transition: ease-in-out 1s;
+  opacity: 0.8;
+
+  &:hover {
+    border:solid 10px rgba(255, 255, 255,1);
+    box-shadow: 0 0 15px #CF0021;
+    opacity: 1;
+    text-shadow: 1px 1px 3px #CF0021;
+  }
+}
+
+#list-card a {
+  text-decoration:none;
+}
