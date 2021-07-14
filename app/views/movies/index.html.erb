@@ -1,10 +1,10 @@
-<div class="row">
+<div class="row m-3">
   <div class="col">
-    <div class="my-5">
+    <div id="red-text-shadow" class="my-5">
       <% if @query %>
-        <p style="color:white;">You searched for <strong><%= @query %></strong>. We found <%= @movies.count %> movies out of our <%= Movie.count %> on our website.</p>
+        <h1>You searched for <span style="color:#CF0021;"><strong><%= @query %></strong></span> . <br>We found <span style="color:#CF0021;"><strong> <%= @movies.count == 1 ? "1 movie" : "#{@movies.count} movies" %></strong></span> out of <%= Movie.count %> from our database.</h1>
       <% else %>
-        <p>All <%= Movie.count %> movies</p>
+        <h1>All <%= Movie.count %> movies</h1>
       <% end %>
     </div>
   </div>

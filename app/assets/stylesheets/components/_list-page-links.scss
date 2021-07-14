@@ -11,6 +11,14 @@
 
 }
 
+#show-underline {
+  border-bottom: 1px solid white;
+  box-shadow: 0 2px 0 #CF0021;
+  &:hover {
+    border-bottom: none;
+  }
+}
+
 .far.fa-plus-square {
   font-size: 32px;
   color: white;
