@@ -1,10 +1,34 @@
+<div class="banner h-50" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : image_path("https://loremflickr.com/g/320/240/#{@list.name}") %>)" >
+    <div class="banner-text " style="text-shadow:1px 1px #CF0021;">
+      <h1><%= @list.name %> List</h1>
+    </div>
+</div>
 
 <div class="container list-title">
   <div class="list-page-links my-3">
-    <h1><%=@list.name%> List </h1>
-    <%= link_to new_list_bookmark_path(@list) do %>
-      <i class="far fa-plus-square"></i>
-    <% end %>
+    <div class="d-flex align-items-center">
+      <h4 class="mr-2">Add Movie</h4>
+      <%= link_to new_list_bookmark_path(@list) do %>
+        <i id="add-button" class="far fa-plus-square add-button"></i>
+      <% end %>
+    </div>
+    <div class="d-flex align-items-center">
+      <h4 class="mr-2">Edit List</h4>
+      <%= link_to edit_list_path(@list) do %>
+      <i id="add-button" class="far fa-plus-square add-button"></i>
+      <% end %>
+    </div>
+    <div class="d-flex align-items-center">
+      <h4 class="mr-2">Remove List</h4>
+      <%= link_to list_path(@list), method: :delete,
+            data: { confirm: "Are you sure?" } do %>
+          <i id="add-button" class="far fa-minus-square"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
   </div>
   <div class="card-product">
     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
@@ -22,11 +46,6 @@
       <%= link_to "Remove", bookmark_path(bookmark), method: :delete,
               data: { confirm: "Are you sure?" }, class: "m-2 remove" %>
     </div>
-  <% end %>
-  <% if @list.photo.attached? %>
-    <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
-  <% else %>
-    <p style="color:white;">no photo</p>
   <% end %>
 
 </div>

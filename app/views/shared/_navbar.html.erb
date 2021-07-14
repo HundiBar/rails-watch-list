@@ -10,7 +10,7 @@
       <%= form_tag movies_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
-          placeholder: "Find a movie"%>
+          placeholder: "Find a movie", class: "p-2 pr-5"%>
         <%= submit_tag "Search", class: "btn btn-outline-success m-2 p-2 px-5" %>
       <% end %>
     </div>

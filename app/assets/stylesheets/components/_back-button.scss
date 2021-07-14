@@ -1,0 +1,13 @@
+.back-button {
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px solid #CF0021;
+  font-size: 24px;
+  transition: ease-in-out 1s;
+  &:hover {
+    color: #CF0021;
+    text-shadow:1px 1px white;
+  }
+}
+
+
