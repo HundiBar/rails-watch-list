@@ -20,9 +20,6 @@ require("channels")
 import 'bootstrap';
 
 import { initSelect2 } from '../components/init_select2';
-// import { owlCarousel } from '../components/owl_carousel';
-
-
 
 
 document.addEventListener("turbolinks:load", function() {
