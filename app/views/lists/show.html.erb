@@ -26,16 +26,10 @@
       <% end %>
     </div>
   </div>
+  <div id="overall-underline" class="my-4"></div>
 </div>
+<div class="container">
+  <%= render "shared/movie-cards" %>
 
-<% @list.bookmarks.each do |bookmark| %>
-  <div>
-    <p><%= bookmark.movie.title%> </p>
-    <p><%= bookmark.movie.overview %></p>
-    <p><%= bookmark.movie.rating %> </p>
-    <%= image_tag bookmark.movie.poster_url , alt: "alttext" %>
-    <%= link_to "Remove", bookmark_path(bookmark), method: :delete,
-            data: { confirm: "Are you sure?" }, class: "m-2 remove" %>
-  </div>
-<% end %>
+</div>
 

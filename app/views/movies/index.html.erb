@@ -10,10 +10,9 @@
   </div>
 </div>
 
-  <% @movies.each do |movie| %>
-    <h1 style="color:white;"> <%= movie.title %> </h1>
-    <%= image_tag movie.poster_url, alt: "alttext" %>
-  <% end %>
+<div class="container">
+  <%= render "movies-only-cards" %>
+</div>
 
 
 
