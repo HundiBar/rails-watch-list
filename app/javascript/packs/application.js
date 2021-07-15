@@ -20,8 +20,12 @@ require("channels")
 import 'bootstrap';
 
 import { initSelect2 } from '../components/init_select2';
+import { initTypedJS } from '../components/init_typedJS';
 
 
 document.addEventListener("turbolinks:load", function() {
   initSelect2();
+  if (document.querySelector("#lower-header")){
+   initTypedJS();
+  }
 });

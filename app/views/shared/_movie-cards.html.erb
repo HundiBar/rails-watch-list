@@ -5,16 +5,16 @@
         <div class="movie-card">
           <div class="movie-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path bookmark.movie.poster_url , alt: "alttext" %>)">
               <div class="card-rating">
-              <%= link_to bookmark_path(bookmark), method: :delete,
-                    data: { confirm: "Are you sure?" } do %>
-                <i id="add-button" class="far fa-minus-square"></i>
-              <% end %>
+                <%= link_to bookmark_path(bookmark), method: :delete,
+                      data: { confirm: "Are you sure?" } do %>
+                  <i id="add-button" class="far fa-minus-square"></i>
+                <% end %>
                 <div class="rating-design">
                   <%= bookmark.movie.rating %>
                 </div>
               </div>
           </div>
-          <div class="d-flex movie-card-info my-5 p-3">
+          <div class="movie-card-info">
               <%= bookmark.movie.title%>
           </div>
         </div>

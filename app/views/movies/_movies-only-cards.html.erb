@@ -1,21 +1,25 @@
-<div class="row some-class">
+<div class="row">
   <div class="col-8">
     <div class="movie-cards">
       <% @movies.each do |movie| %>
         <div class="movie-card">
-          <div class="movie-card-img">
-            <%= image_tag movie.poster_url , alt: "alttext" %>
+          <div class="movie-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path movie.poster_url , alt: "alttext" %>)">
+              <div class="card-rating">
+                <div></div>
+                <div class="rating-design">
+                  <%= movie.rating %>
+                </div>
+              </div>
           </div>
           <div class="movie-card-info">
-            <p><%= movie.title%> </p>
-            <p><%= movie.rating %> </p>
+              <%= movie.title%>
           </div>
         </div>
       <% end %>
     </div>
   </div>
-  <div class="col-4 color-border">
+  <div class="col-4 color-border" >
     <h1 class="list-page-links">Select A Movie...</h1>
-
   </div>
 </div>
+
