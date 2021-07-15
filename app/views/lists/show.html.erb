@@ -1,6 +1,13 @@
 <div class="banner h-50" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : image_path("https://loremflickr.com/g/320/240/#{@list.name}") %>)" >
     <div class="banner-text " style="text-shadow:1px 1px #CF0021;">
-      <h1><%= @list.name %> List</h1>
+      <div class="d-flex align-items-center">
+        <h1 class="mx-2">
+          <%= link_to list_path(@list) do %>
+             <i class="fas fa-arrow-circle-left back-button mt-3"></i>
+          <% end %>
+        </h1>
+        <h1><%= @list.name %> List</h1>
+      </div>
     </div>
 </div>
 
@@ -15,7 +22,7 @@
     <div id="show-underline" class="d-flex align-items-center">
       <h4 class="mr-2">Edit List</h4>
       <%= link_to edit_list_path(@list) do %>
-      <i id="add-button" class="far fa-plus-square add-button"></i>
+        <i id="add-button" class="far fa-plus-square add-button"></i>
       <% end %>
     </div>
     <div id="show-underline" class="d-flex align-items-center">

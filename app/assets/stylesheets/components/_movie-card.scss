@@ -14,27 +14,32 @@
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(255, 255, 255,1);
-  border:solid 5px #CF0021;
+  box-shadow: 0 0 15px #CF0021;
+  border:solid 5px rgba(255, 255, 255,1) ;
   text-decoration: none;
   transition: ease-in-out 1s;
   opacity: 0.8;
 
   &:hover {
-    border:solid 5px rgba(255, 255, 255,1);
-    box-shadow: 0 0 15px #CF0021;
+    border:solid 5px #CF0021;
+    box-shadow: 0 0 15px rgba(255, 255, 255,1);
     opacity: 1;
     text-shadow: 1px 1px 3px #CF0021;
   }
 }
 
-.movie-card-img > img {
-  height: 250px;
+.movie-card-img {
+  height: 350px;
   width: 100%;
-  object-fit: cover;
-  object-position: 50% 0%;
+  background-size: cover;
+  background-position: center 10%;
 
 }
+
 .movie-card-info {
   color: white;
+}
+
+.color-border {
+  border-left: 1px solid #c68787;
 }

@@ -3,10 +3,11 @@
     <div class="movie-cards">
       <% @list.bookmarks.each do |bookmark| %>
         <div class="movie-card">
-          <div class="movie-card-img">
-            <%= image_tag bookmark.movie.poster_url , alt: "alttext" %>
-            <%= link_to "Remove", bookmark_path(bookmark), method: :delete,
-                  data: { confirm: "Are you sure?" }, class: "m-2 remove" %>
+          <div class="movie-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path bookmark.movie.poster_url , alt: "alttext" %>)">
+            <%= link_to bookmark_path(bookmark), method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+              <i id="add-button" class="far fa-minus-square mx-2"></i>
+            <% end %>
           </div>
           <div class="movie-card-info">
             <p><%= bookmark.movie.title%> </p>
@@ -16,7 +17,7 @@
       <% end %>
     </div>
   </div>
-  <div class="col-4">
+  <div class="col-4 color-border" >
     <h1 class="list-page-links">Select A Movie...</h1>
   </div>
 </div>
