@@ -2,7 +2,7 @@
   <div class="col-8">
     <div class="movie-cards">
       <% @movies.each do |movie| %>
-        <div id="onClick" class="movie-card">
+        <div class="movie-card">
           <div class="movie-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path movie.poster_url , alt: "alttext" %>)">
               <div class="card-rating">
                 <div></div>
