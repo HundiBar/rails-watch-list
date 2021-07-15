@@ -4,14 +4,18 @@
       <% @list.bookmarks.each do |bookmark| %>
         <div class="movie-card">
           <div class="movie-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path bookmark.movie.poster_url , alt: "alttext" %>)">
-            <%= link_to bookmark_path(bookmark), method: :delete,
-                  data: { confirm: "Are you sure?" } do %>
-              <i id="add-button" class="far fa-minus-square mx-2"></i>
-            <% end %>
+              <div class="card-rating">
+              <%= link_to bookmark_path(bookmark), method: :delete,
+                    data: { confirm: "Are you sure?" } do %>
+                <i id="add-button" class="far fa-minus-square"></i>
+              <% end %>
+                <div class="rating-design">
+                  <%= bookmark.movie.rating %>
+                </div>
+              </div>
           </div>
-          <div class="movie-card-info">
-            <p><%= bookmark.movie.title%> </p>
-            <p><%= bookmark.movie.rating %> </p>
+          <div class="d-flex movie-card-info my-5 p-3">
+              <%= bookmark.movie.title%>
           </div>
         </div>
       <% end %>

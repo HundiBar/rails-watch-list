@@ -43,3 +43,16 @@
 .color-border {
   border-left: 1px solid #c68787;
 }
+
+.movie-card .card-rating {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 16px;
+}
+
+.rating-design {
+  background-color: #CF0021;
+  padding: 6px 12px;
+  border-radius: 15px;
+}
