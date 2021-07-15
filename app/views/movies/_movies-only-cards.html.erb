@@ -1,28 +1,36 @@
-<div class="row">
-  <div class="col-8">
-    <div class="movie-cards">
-      <% @movies.each do |movie| %>
-        <div class="movie-card">
-          <div class="movie-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path movie.poster_url , alt: "alttext" %>)">
-              <div class="card-rating">
-                <div></div>
-                <div class="rating-design">
-                  <%= movie.rating %>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="movie-cards">
+        <% @movies.each do |movie| %>
+          <div class="movie-card">
+            <div class="movie-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path movie.poster_url , alt: "alttext" %>)">
+                <div class="card-rating">
+                  <div></div>
+                  <div class="rating-design">
+                    <%= movie.rating %>
+                  </div>
                 </div>
-              </div>
+            </div>
+            <div class="movie-card-info">
+                <h4><strong><%= movie.title%></strong></h4>
+                <p><%= movie.overview %></p>
+            </div>
+            <div class="list-tags">
+              <% movie.lists.each do |list| %>
+                <div class="list-tag-btn">
+                  <%= link_to "#{list.name}",list_path(list)  %>
+                </div>
+              <% end %>
+            </div>
           </div>
-          <div class="movie-card-info">
-              <h4><strong><%= movie.title%></strong></h4>
-              <p><%= movie.overview %></p>
-          </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div class="col-4 color-border" >
-    <h1 class="list-page-links">Select A Movie...</h1>
-    <div id="clicked">
+    <div class="col-4 color-border" >
+      <div class="modal-card">
+        <h1 class="list-page-links">Select A Movie...</h1>
 
+      </div>
     </div>
-  </div>
-
+</div>
