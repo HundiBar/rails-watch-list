@@ -19,6 +19,7 @@
   text-decoration: none;
   transition: ease-in-out 1s;
   opacity: 0.8;
+  overflow: hidden;
 
   &:hover {
     border:solid 5px #CF0021;
@@ -38,10 +39,9 @@
 
 .movie-card-info {
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 36px;
+  font-size: 12px;
+  padding: 8px;
+  overflow: hidden;
 }
 
 .color-border {

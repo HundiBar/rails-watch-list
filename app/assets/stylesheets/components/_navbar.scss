@@ -30,6 +30,27 @@
  }
 }
 
+.btn-red-opposite {
+
+  height: 42px;
+  width: 148px;
+  font-size: 16px;
+  font-family: "Work Sans" Helvetica sans-serif;
+  color: #C30000;
+  padding: 8px 29px;
+  margin: 8px;
+  background-color: white;
+  border: 1px solid #C30000;
+  border-radius: 2px;
+  transition: ease-in-out 1s;
+  &:hover {
+    color: white;
+    background: #C30000;
+    border: 1px solid white;
+    text-decoration: none;
+ }
+}
+
 .navbar {
   background-color:#130405;
   border-bottom: 1px solid white;

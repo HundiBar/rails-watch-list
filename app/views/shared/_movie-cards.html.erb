@@ -2,7 +2,7 @@
   <div class="col-8">
     <div class="movie-cards">
       <% @list.bookmarks.each do |bookmark| %>
-        <div class="movie-card">
+        <div id="onClick" class="movie-card">
           <div class="movie-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path bookmark.movie.poster_url , alt: "alttext" %>)">
               <div class="card-rating">
                 <%= link_to bookmark_path(bookmark), method: :delete,
@@ -15,7 +15,8 @@
               </div>
           </div>
           <div class="movie-card-info">
-              <%= bookmark.movie.title%>
+              <h4><strong><%= bookmark.movie.title%></strong></h4>
+              <p><%= bookmark.movie.overview %></p>
           </div>
         </div>
       <% end %>
@@ -23,5 +24,8 @@
   </div>
   <div class="col-4 color-border" >
     <h1 class="list-page-links">Select A Movie...</h1>
+    <div id="clicked">
+
   </div>
-</div>
+  </div>
+

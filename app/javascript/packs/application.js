@@ -21,11 +21,12 @@ import 'bootstrap';
 
 import { initSelect2 } from '../components/init_select2';
 import { initTypedJS } from '../components/init_typedJS';
-
+import { cardModal } from '../components/init_cardModal';
 
 document.addEventListener("turbolinks:load", function() {
   initSelect2();
   if (document.querySelector("#lower-header")){
    initTypedJS();
   }
+  cardModal();
 });
