@@ -3,7 +3,7 @@
     <div class="movie-cards">
       <% @list.bookmarks.each do |bookmark| %>
         <div class="movie-card" data-movie-card="<%= bookmark.to_json(include: {movie: {include: :lists }}) %>" >
-          <div class="movie-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path bookmark.movie.poster_url , alt: "alttext" %>)">
+          <div class="movie-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path bookmark.movie.poster_url %>)">
               <div class="card-rating">
                 <%= link_to bookmark_path(bookmark), method: :delete,
                       data: { confirm: "Are you sure?" } do %>
@@ -22,7 +22,7 @@
           <div class="list-tags">
             <% bookmark.movie.lists.each do |list| %>
               <div class="list-tag-btn">
-                <%= link_to "#{list.name}",list_path(list)  %>
+                <%= link_to list.name,list_path(list)  %>
               </div>
             <% end %>
           </div>
@@ -30,10 +30,12 @@
       <% end %>
     </div>
   </div>
-  <div class="col-4 color-border" >
+  <div class="col-4 color-border mb-5">
     <div class="modal-card">
       <h1 class="list-page-links">Select A Movie...</h1>
 
     </div>
+    <div class="mt-5"></div>
   </div>
+</div>
 

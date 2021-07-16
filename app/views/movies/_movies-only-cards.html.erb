@@ -2,35 +2,14 @@
   <div class="row">
     <div class="col-8">
       <div class="movie-cards">
-        <% @movies.each do |movie| %>
-          <div  class="search movie-card" data-search="<%= movie.to_json(include: [:lists]) %>" >
-            <div class="movie-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path movie.poster_url , alt: "alttext" %>)">
-                <div class="card-rating">
-                  <div></div>
-                  <div class="rating-design">
-                    <%= movie.rating %>
-                  </div>
-                </div>
-            </div>
-            <div class="movie-card-info">
-                <h4><strong><%= movie.title%></strong></h4>
-                <p><%= movie.overview %></p>
-            </div>
-            <div class="list-tags">
-              <% movie.lists.each do |list| %>
-                <div class="list-tag-btn">
-                  <%= link_to "#{list.name}",list_path(list)  %>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
+        <%= render "shared/build-movie-only-card" %>
       </div>
     </div>
-    <div class="col-4 color-border" >
-      <div class="search-modal-card">
+    <div class="col-4 color-border">
+      <div class="search-modal-card" style="position:fixed">
         <h1 class="list-page-links">Select A Movie...</h1>
-
       </div>
     </div>
+  </div>
 </div>
+

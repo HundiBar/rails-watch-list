@@ -1,0 +1,23 @@
+<% @movies.each do |movie| %>
+  <div class="search movie-card" data-search="<%= movie.to_json(include: [:lists]) %>" >
+    <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path movie.poster_url %>)" class="  movie-card-img">
+      <div class="card-rating">
+        <div></div>
+        <div class="rating-design">
+          <%= movie.rating %>
+        </div>
+      </div>
+    </div>
+    <div class="movie-card-info">
+        <h4><strong><%= movie.title%></strong></h4>
+        <p><%= movie.overview %></p>
+    </div>
+    <div class="list-tags">
+      <% movie.lists.each do |list| %>
+        <div class="list-tag-btn">
+          <%= link_to list.name, list_path(list)  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

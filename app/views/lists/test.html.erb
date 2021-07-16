@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-8">
+      <% @movies.each do |movie| %>
+        <div class="search movie-card" data-search="<%= movie.to_json(include: [:lists]) %>" >
+          <div class="movie-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path movie.poster_url , alt: "alttext" %>)" >
+
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-4 color-border" style="position:fixed">
+        <div class="search-modal-card">
+        <h1 class="list-page-links">Select A Movie...</h1>
+        </div>
+    </div>
+
+  </div>
+</div>
