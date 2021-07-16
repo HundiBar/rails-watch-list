@@ -14,9 +14,13 @@ const cardModal = () => {
       const overview = `<p>${cardData.movie.overview}</p>`
       modal.insertAdjacentHTML("beforeend", overview);
       const ol = document.createElement("ol")
-      modal.insertAdjacentHTML("beforeend", `<h4 class="my-3">${cardData.movie.title} is also part of...</h4>`)
-      cardData.movie.lists.map(list => ol.insertAdjacentHTML("beforeend", `<a class="btn-red-opposite" href="/lists/${list.id}">${list.name}</a>`));
-      modal.insertAdjacentHTML("beforeend", ol.innerHTML);
+      if (cardData.movie.lists.length === 1) {
+        modal.insertAdjacentHTML("beforeend", `<h4 class="my-3">${cardData.movie.title} is only part of ${cardData.movie.lists[0].name} right now...</h4>`)
+      } else {
+        modal.insertAdjacentHTML("beforeend", `<h4 class="my-3">${cardData.movie.title} is also part of...</h4>`)
+        cardData.movie.lists.map(list => ol.insertAdjacentHTML("beforeend", `<a class="btn-red-opposite" href="/lists/${list.id}">${list.name}</a>`));
+        modal.insertAdjacentHTML("beforeend", ol.innerHTML);
+      };
       modal.style.color="white";
     });
 
